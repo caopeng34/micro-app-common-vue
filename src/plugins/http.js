@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { storage } from "./storage";
+import { ls_local,ls_session } from "./storage";
 import axios from "axios";
 import { Notify } from "vant";
 import store from "../store";
