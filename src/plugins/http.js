@@ -6,7 +6,7 @@ import axios from "axios";
 import { Notify } from "vant";
 import store from "../store";
 
-const timeout = 10 * 1000;
+const timeout = 120 * 1000;
 const baseURL = process.env.BASE_URL;
 
 const service = isUpload => {
