@@ -80,9 +80,9 @@ export default {
 .vloadingindex .v_loading {
   display: flex;
   color: #666666;
-  font-size: 0.48rem;
+  font-size: 4.8vw;
   font-family: Lato, sans-serif;
-  letter-spacing: 0.16rem;
+  letter-spacing: 1.6vw;
   text-transform: uppercase;
 }
 
@@ -99,8 +99,8 @@ export default {
 
 <style scoped>
 .div0 {
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   overflow: hidden;
 }
 
