@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import "./assets/less/index.less";
 import "./plugins/http";
+import "./plugins/vant";
 
 Vue.config.productionTip = false
 

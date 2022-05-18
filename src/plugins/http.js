@@ -1,4 +1,6 @@
 import Vue from "vue";
+import GLoad from "../components/global-load/index"
+Vue.use(GLoad)
 import { ls } from "./storage";
 import axios from "axios";
 import { Notify } from "vant";
@@ -19,6 +21,7 @@ const service = isUpload => {
   });
 
   let beforeHandle = config => {
+    Vue.prototype.$gload.gload()  // 显示加载中
     if (config.anonymous) {
       return config;
     } else {
@@ -89,7 +92,9 @@ const service = isUpload => {
 
   instance.interceptors.request.use(
     config => beforeHandle(config),
-    error => Promise.reject(error)
+    error => {
+      return Promise.reject(error)
+    }
   );
   instance.interceptors.response.use(
     response => {
