@@ -9,4 +9,4 @@ Vue.use(VueStorage, {
   storage: "local"    // 存储名称: session, local, memory
 });
 
-export const ls_local = Vue.ls;
+export const ls = Vue.ls;
