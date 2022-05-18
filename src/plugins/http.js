@@ -21,7 +21,7 @@ const service = isUpload => {
   });
 
   let beforeHandle = config => {
-    Vue.prototype.$gload.gload()  // 显示加载中
+    Vue.prototype.$gload.gload('')  // 显示加载中
     if (config.anonymous) {
       return config;
     } else {
@@ -93,15 +93,18 @@ const service = isUpload => {
   instance.interceptors.request.use(
     config => beforeHandle(config),
     error => {
+      Vue.prototype.$gload.gload(false)  // 关闭加载中
       return Promise.reject(error)
     }
   );
   instance.interceptors.response.use(
     response => {
+      Vue.prototype.$gload.gload(false)  // 关闭加载中
       // todo 200 => response.data.code = 40004 token 失效
       return Promise.resolve(response.data);
     },
     error => {
+      Vue.prototype.$gload.gload(false)  // 关闭加载中
       let message = afterHandle(error);
       return Promise.reject({ message, response: error.response });
     }
